@@ -86,7 +86,7 @@ def standard():
         standard()
     return grades
 def intro():
-    print("Hello", name, ", my name is Genie. I am a gpa calculator created by Aman Shaik")
+    print("Hello", name, ", my name is Genie. I am a GPA calculator created by Aman Shaik")
     print("Help me out with some basic information first.")
 def questions():
     ap = int(input(" How many ap classes do you take?:  "))
