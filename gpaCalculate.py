@@ -1,11 +1,11 @@
-# import datetime
 import time
-# currentDT = datetime.datetime.now()
-# functions
 import webbrowser
+
 name = input("Hello, Please input your name: ")
 bonus = 3
 gradehonors = 13.5
+
+
 def Honors():
     honorsgrade = input("Tell me your grade in Honors: ")
     if honorsgrade == "A+" or honorsgrade == "a+":
@@ -32,6 +32,8 @@ def Honors():
         print("That was not a valid answer please try again.")
         Honors()
     return gradeh
+
+
 def apcalc():
     ap = input("What is your grade in ap class? ")
     if ap == "A+" or ap == "a+":
@@ -59,6 +61,7 @@ def apcalc():
         apcalc()
     return gradea
 
+
 def standard():
     st = input("What is your standard grade?: ")
     if st == "A+" or st == ("a+"):
@@ -85,9 +88,13 @@ def standard():
         print("That was not a valid answer please try again.")
         standard()
     return grades
+
+
 def intro():
     print("Hello", name, ", my name is Genie. I am a GPA calculator created by Aman Shaik")
     print("Help me out with some basic information first.")
+
+
 def questions():
     ap = int(input(" How many ap classes do you take?:  "))
     h = int(input(" How many Honors classes do you take?:  "))
@@ -118,8 +125,8 @@ def questions():
     twelvepointgpa = (total / numclasses)
     fourpointgpa = twelvepointgpa / 2.62663185
     goalgpa = float(input("What is your desired GPA?: "))
-    pointsaway=(goalgpa-fourpointgpa)
-    print("you are ",pointsaway,"from your desired GPA")
+    pointsaway = (goalgpa - fourpointgpa)
+    print("you are ", pointsaway, "from your desired GPA")
     print("I will now calculate your grade.")
     print("calculating.....")
     print(".........")
@@ -129,7 +136,7 @@ def questions():
     openchart()
     print(name, "your four point gpa is approximately ", fourpointgpa)
     again = input("Hope This was successful would you like to run again?")
-    if again == "yes":
+    if again == "yes" or "YES":
         intro()
         questions()
     else:
