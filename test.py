@@ -1,2 +1,1 @@
-seq=["This is 6th line\n", "This is 7th line"]
-print(seq)
+print("\033[1;32;40m Bright Green  \n")
