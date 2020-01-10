@@ -1,34 +1,5 @@
 import time
 import webbrowser
-# his = ''
-# hisd = ''
-# hc = ''
-# csp = ''
-# cspd = ''
-# csc = ''
-# rob = ''
-# robd = ''
-# rc = ''
-# pc = ''
-# pcd = ''
-# pcc = ''
-# chem = ''
-# chemd = ''
-# cc = ''
-# eng = ''
-# engd = ''
-# ec = ''
-# arab = ''
-# arabd = ''
-# ac = ''
-# def allHomeWork():
-#     historyHW()
-#     comsciHW()
-#     advrobHW()
-#     pcalHW()
-#     chemHW()
-#     engHW()
-#     arabHW()
 
 # def historyHW():
 his = input("What is tonight's homework for History?: ")
@@ -83,13 +54,14 @@ ac = input("Is it completed?:")
 # if option=="chemistry":
 #     chemHW()
 
-g = open("planner2.html", "w")
+g = open("realplanner.html", "w")
 print("file created")
 l = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial, sans-serif;\n",
      "  border-collapse: collapse;\n", "  width: 100%;\n", "}\n", "td, th {\n", "border: 1px solid #dddddd;\n",
      "text-align: left;\n", "padding: 8px;\n", "}\n", "tr:nth-child(even) {\n", "background-color: #e8effa;\n", "}\n",
      "</style>\n", "</head>\n", "<body>\n", "<table>\n", "<tr>\n", "<th>Class</th>\n",
-     "<th>Assignment</th>\n", "<th>Assessments</th>\n","<th>Completion</th>\n" "</tr>\n", "<tr>\n", "<td>Contemporary World History</td>\n",
+     "<th>Assignment</th>\n", "<th>Assessments</th>\n", "<th>Completion</th>\n" "</tr>\n", "<tr>\n",
+     "<td>Contemporary World History</td>\n",
      "<td>" + his + "</td>\n", "<td>" + hisd + "</td>\n", "<td>" + hc + "</td>\n", "</tr>\n", "<tr>\n",
      "<td>AP Computer Science Principles</td>\n",
      "<td>" + csp + "</td>\n", "<td>" + cspd + "</td>\n", "<td>" + csc + "</td>\n", "</tr>\n", "<tr>\n",
@@ -105,16 +77,18 @@ l = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial, sa
      "<td>" + arab + "</td>\n", "<td>" + arabd + "</td>\n", "<td>" + ac + "</td>\n", "</tr>\n", "</table>\n",
      "</body>\n", "</html>"]
 
+
 def openchart():
-    print("opening chart in 3 seconds...")
+    print("opening chart in 3 seconds............................")
     time.sleep(1)
-    print("2 seconds")
+    print("2 seconds............................")
     time.sleep(1)
-    print("1 second")
+    print("1 second............................")
     time.sleep(1)
-    print("opening...")
-    webbrowser.open("file:///C:/Users/Aman%20Shaik/PycharmProjects/aman's%20programs/planner2.html")
-print("planner2.txt opened")
+    print("opening............................")
+    webbrowser.open("file:///C:/Users/Aman%20Shaik/PycharmProjects/aman's%20programs/realplanner.html")
+
+
 g.writelines(l)
 g.close()
 openchart()
