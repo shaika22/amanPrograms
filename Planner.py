@@ -1,81 +1,172 @@
 import time
 import webbrowser
 
-# def historyHW():
-his = input("What is tonight's homework for History?: ")
-hisd = input("when is it due?:")
-hc = input("Is it completed?:")
+# list of variables to initialize
+his = ""
+hisd = ""
+hco = ""
+hc = ""
+ha = ""
+csp = ""
+cspd = ""
+cco = ""
+csc = ""
+ca = ""
+rob = ""
+robd = ""
+rco = ""
+rc = ""
+ra = ""
+pc = ""
+pcd = ""
+pco = ""
+pcc = ""
+pa = ""
+chem = ""
+chemd = ""
+ccolor = ""
+cc = ""
+cha = ""
+eng = ""
+engd = ""
+eco = ""
+ec = ""
+ea = ""
+arab = ""
+arabd = ""
+aco = ""
+ac = ""
+aa = ""
 
-# def comsciHW():
-csp = input("What is tonight's homework for AP Com Sci?: ")
-cspd = input("when is it due?:")
-csc = input("Is it completed?:")
-#
-#
-# def advrobHW():
-rob = input("What is tonight's homework for Advanced Robotics?: ")
-robd = input("when is it due?:")
-rc = input("Is it completed?:")
+name = "Aman"
+option = input("Hello " + name + ", Input HW by (subject)or(all)")
+due = "When is it due?:"
+complete = "Is it completed?:"
+assessments = "Do you have any upcoming Tests or Quizzes"
 
-#
-# def pcalHW():
-pc = input("What is tonight's homework for Math?: ")
-pcd = input("when is it due?:")
-pcc = input("Is it completed?:")
 
-# def chemHW():
-chem = input("What is tonight's homework for Chemistry?: ")
-chemd = input("when is it due?:")
-cc = input("Is it completed?:")
+def historyHW():
+    his = input("What is tonight's homework for History?: ")
+    hisd = input(due)
+    hc = input(complete)
+    if hc == "yes":
+        hco = " bgcolor=MediumSeaGreen"
+    else:
+        hco = " bgcolor=Tomato"
+    ha = input(assessments)
+    updateChart()
+    openchart()
 
-# def engHW():
-eng = input("What is tonight's homework for English?: ")
-engd = input("when is it due?:")
-ec = input("Is it completed?:")
 
-# def arabHW():
-arab = input("What is tonight's homework for Arabic?: ")
-arabd = input("when is it due?:")
-ac = input("Is it completed?:")
+def comsciHW():
+    csp = input("What is tonight's homework for AP Com Sci?: ")
+    cspd = input(due)
+    csc = input(complete)
+    if csc == "yes":
+        cco = " bgcolor=MediumSeaGreen"
+    else:
+        cco = " bgcolor=Tomato"
+    ca = input(assessments)
+    updateChart()
+    openchart()
 
-# option = input("Hello Aman, what do you want me to input(subject)(all):")
-# if option == "all":
-#     allHomeWork()
-# if option=="history":
-#     historyHW()
-# if option=="comsci":
-#     comsciHW()
-# if option=="robotics":
-#     advrobHW()
-# if option=="arabic":
-#     arabHW()
-# if option=="english":
-#     engHW()
-# if option=="chemistry":
-#     chemHW()
+
+def advrobHW():
+    rob = input("What is tonight's homework for Advanced Robotics?: ")
+    robd = input(due)
+    rc = input(complete)
+    if rc == "yes":
+        rco = " bgcolor=MediumSeaGreen"
+    else:
+        rco = " bgcolor=Tomato"
+    ra = input(assessments)
+    updateChart()
+    openchart()
+
+
+def pcalHW():
+    pc = input("What is tonight's homework for Math?: ")
+    pcd = input(due)
+    pcc = input(complete)
+    if pcc == "yes":
+        pco = " bgcolor=MediumSeaGreen"
+    else:
+        pco = " bgcolor=Tomato"
+    pa = input(assessments)
+    updateChart()
+    openchart()
+
+
+def chemHW():
+    chem = input("What is tonight's homework for Chemistry?: ")
+    chemd = input(due)
+    cc = input(complete)
+    if cc == "yes":
+        ccolor = " bgcolor=MediumSeaGreen"
+    else:
+        ccolor = " bgcolor=Tomato"
+    cha = input(assessments)
+    updateChart()
+    openchart()
+
+
+def engHW():
+    eng = input("What is tonight's homework for English?: ")
+    engd = input(due)
+    ec = input(complete)
+    if ec == "yes":
+        eco = " bgcolor=MediumSeaGreen"
+    else:
+        eco = " bgcolor=Tomato"
+    ea = input(assessments)
+    updateChart()
+    openchart()
+
+def arabHW():
+    arab = input("What is tonight's homework for Arabic?: ")
+    arabd = input(due)
+    ac = input(complete)
+    if ac == "yes":
+        aco = " bgcolor=MediumSeaGreen"
+    else:
+        aco = " bgcolor=Tomato"
+    aa = input(assessments)
+    updateChart()
+    openchart()
+
+
+def allHomeWork():
+    historyHW()
+    comsciHW()
+    advrobHW()
+    arabHW()
+    engHW()
+    chemHW()
+    pcalHW()
+    openchart()
+
+
+def retry():
+    if option == "all":
+        allHomeWork()
+    if option == "history":
+        historyHW()
+    if option == "comsci":
+        comsciHW()
+    if option == "robotics":
+        advrobHW()
+    if option == "arabic":
+        arabHW()
+    if option == "english":
+        engHW()
+    if option == "chemistry":
+        chemHW()
+    if option == "math":
+        pcalHW()
+
 
 g = open("realplanner.html", "w")
 print("file created")
-l = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial, sans-serif;\n",
-     "  border-collapse: collapse;\n", "  width: 100%;\n", "}\n", "td, th {\n", "border: 1px solid #dddddd;\n",
-     "text-align: left;\n", "padding: 8px;\n", "}\n", "tr:nth-child(even) {\n", "background-color: #e8effa;\n", "}\n",
-     "</style>\n", "</head>\n", "<body>\n", "<table>\n", "<tr>\n", "<th>Class</th>\n",
-     "<th>Assignment</th>\n", "<th>Assessments</th>\n", "<th>Completion</th>\n" "</tr>\n", "<tr>\n",
-     "<td>Contemporary World History</td>\n",
-     "<td>" + his + "</td>\n", "<td>" + hisd + "</td>\n", "<td>" + hc + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>AP Computer Science Principles</td>\n",
-     "<td>" + csp + "</td>\n", "<td>" + cspd + "</td>\n", "<td>" + csc + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>Video Production</td>\n",
-     "<td>" + rob + "</td>\n", "<td>" + robd + "</td>\n", "<td>" + rc + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>PreCal Honors</td>\n",
-     "<td>" + pc + "</td>\n", "<td>" + pcd + "</td>\n", "<td>" + pcc + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>Chemistry Honors</td>\n",
-     "<td>" + chem + "</td>\n", "<td>" + chemd + "</td>\n", "<td>" + cc + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>English II</td>\n",
-     "<td>" + eng + "</td>\n", "<td>" + engd + "</td>\n", "<td>" + ec + "</td>\n", "</tr>\n", "<tr>\n",
-     "<td>Arabic</td>\n",
-     "<td>" + arab + "</td>\n", "<td>" + arabd + "</td>\n", "<td>" + ac + "</td>\n", "</tr>\n", "</table>\n",
-     "</body>\n", "</html>"]
 
 
 def openchart():
@@ -89,7 +180,65 @@ def openchart():
     webbrowser.open("file:///C:/Users/Aman%20Shaik/PycharmProjects/aman's%20programs/realplanner.html")
 
 
-g.writelines(l)
+def updateChart():
+    g.writelines(lines)
+    print("Chart Updated")
+
+lines = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial, sans-serif;\n",
+         "  border-collapse: collapse;\n", "  width: 100%;\n", "}\n", "td, th {\n", "border: 1px solid #dddddd;\n",
+         "text-align: left;\n", "padding: 8px;\n", "}\n", "}\n",
+         "</style>\n", "</head>\n", "<body>\n", "<table>\n", "<tr>\n", "<th>Class</th>\n",
+         "<th>Assignment</th>\n", "<th>DUE</th>\n", "<th>Completion</th>\n", "<th>Upcoming Assessments</th>\n",
+         "</tr>\n", "<tr>\n",
+         "<td>Contemporary World History</td>\n",
+         "<td>" + his + "</td>\n", "<td>" + hisd + "</td>\n", "<td" + hco + ">" + hc + "</td>\n",
+         "<td>" + ha + "</td>\n",
+         "</tr>\n", "<tr>\n",
+         "<td>AP Computer Science Principles</td>\n",
+         "<td>" + csp + "</td>\n", "<td>" + cspd + "</td>\n", "<td" + cco + ">" + csc + "</td>\n",
+         "<td>" + ca + "</td>\n""</tr>\n", "<tr>\n",
+         "<td>Advanced Robotics</td>\n",
+         "<td>" + rob + "</td>\n", "<td>" + robd + "</td>\n", "<td" + rco + ">" + rc + "</td>\n",
+         "<td>" + ra + "</td>\n""</tr>\n",
+         "<tr>\n",
+         "<td>PreCal Honors</td>\n",
+         "<td>" + pc + "</td>\n", "<td>" + pcd + "</td>\n", "<td" + pco + ">" + pcc + "</td>\n",
+         "<td>" + pa + "</td>\n""</tr>\n",
+         "<tr>\n",
+         "<td>Chemistry Honors</td>\n",
+         "<td>" + chem + "</td>\n", "<td>" + chemd + "</td>\n", "<td" + ccolor + ">" + cc + "</td>\n",
+         "<td>" + cha + "</td>\n" "</tr>\n", "<tr>\n",
+         "<td>English II</td>\n",
+         "<td>" + eng + "</td>\n", "<td>" + engd + "</td>\n", "<td" + eco + ">" + ec + "</td>\n",
+         "<td>" + ea + "</td>\n""</tr>\n",
+         "<tr>\n",
+         "<td>Arabic</td>\n",
+         "<td>" + arab + "</td>\n", "<td>" + arabd + "</td>\n", "<td" + aco + ">" + ac + "</td>\n",
+         "<td>" + aa + "</td>\n""</tr>\n", "</table>\n",
+         "</body>\n", "</html>"]
+
+
+
+
+
+if option == "all":
+    allHomeWork()
+if option == "history":
+    historyHW()
+if option == "comsci":
+    comsciHW()
+if option == "robotics":
+    advrobHW()
+if option == "arabic":
+    arabHW()
+if option == "english":
+    engHW()
+if option == "chemistry":
+    chemHW()
+if option == "math":
+    pcalHW()
+else:
+    print("not a valid answer, try again")
+    retry()
+
 g.close()
-openchart()
-print("Planner updated")
