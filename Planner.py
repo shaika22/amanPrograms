@@ -2,41 +2,41 @@ import time
 import webbrowser
 
 # list of variables to initialize
-his = ""
-hisd = ""
-hco = ""
-hc = ""
-ha = ""
-csp = ""
-cspd = ""
-cco = ""
-csc = ""
-ca = ""
-rob = ""
-robd = ""
-rco = ""
-rc = ""
-ra = ""
-pc = ""
-pcd = ""
-pco = ""
-pcc = ""
-pa = ""
-chem = ""
-chemd = ""
-ccolor = ""
-cc = ""
-cha = ""
-eng = ""
-engd = ""
-eco = ""
-ec = ""
-ea = ""
-arab = ""
-arabd = ""
-aco = ""
-ac = ""
-aa = ""
+# his = ""
+# hisd = ""
+# hco = ""
+# hc = ""
+# ha = ""
+# csp = ""
+# cspd = ""
+# cco = ""
+# csc = ""
+# ca = ""
+# rob = ""
+# robd = ""
+# rco = ""
+# rc = ""
+# ra = ""
+# pc = ""
+# pcd = ""
+# pco = ""
+# pcc = ""
+# pa = ""
+# chem = ""
+# chemd = ""
+# ccolor = ""
+# cc = ""
+# cha = ""
+# eng = ""
+# engd = ""
+# eco = ""
+# ec = ""
+# ea = ""
+# arab = ""
+# arabd = ""
+# aco = ""
+# ac = ""
+# aa = ""
 
 name = "Aman"
 option = input("Hello " + name + ", Input HW by (subject)or(all)")
@@ -54,8 +54,9 @@ def historyHW():
     else:
         hco = " bgcolor=Tomato"
     ha = input(assessments)
-    updateChart()
+    g.writelines(lines)
     openchart()
+    return his, hisd, hc, hco, ha
 
 
 def comsciHW():
@@ -122,6 +123,7 @@ def engHW():
     updateChart()
     openchart()
 
+
 def arabHW():
     arab = input("What is tonight's homework for Arabic?: ")
     arabd = input(due)
@@ -184,8 +186,10 @@ def updateChart():
     g.writelines(lines)
     print("Chart Updated")
 
-lines = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial, sans-serif;\n",
-         "  border-collapse: collapse;\n", "  width: 100%;\n", "}\n", "td, th {\n", "border: 1px solid #dddddd;\n",
+
+lines = ["<html>\n", "<head>\n", "<style>\n", "body {\n", "background-color: #e4f0f0;\n", "}\n", "table {\n",
+         "  font-family: arial, sans-serif;\n",
+         "  border-collapse: collapse;\n", "  width: 100%;\n", "}\n", "td, th {\n", "border: 1px solid #000000;\n",
          "text-align: left;\n", "padding: 8px;\n", "}\n", "}\n",
          "</style>\n", "</head>\n", "<body>\n", "<table>\n", "<tr>\n", "<th>Class</th>\n",
          "<th>Assignment</th>\n", "<th>DUE</th>\n", "<th>Completion</th>\n", "<th>Upcoming Assessments</th>\n",
@@ -217,25 +221,21 @@ lines = ["<html>\n", "<head>\n", "<style>\n", "table {\n", "  font-family: arial
          "<td>" + aa + "</td>\n""</tr>\n", "</table>\n",
          "</body>\n", "</html>"]
 
-
-
-
-
 if option == "all":
     allHomeWork()
-if option == "history":
+elif option == "history":
     historyHW()
-if option == "comsci":
+elif option == "comsci":
     comsciHW()
-if option == "robotics":
+elif option == "robotics":
     advrobHW()
-if option == "arabic":
+elif option == "arabic":
     arabHW()
-if option == "english":
+elif option == "english":
     engHW()
-if option == "chemistry":
+elif option == "chemistry":
     chemHW()
-if option == "math":
+elif option == "math":
     pcalHW()
 else:
     print("not a valid answer, try again")
